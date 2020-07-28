@@ -1,0 +1,89 @@
+NomToReplace // Le Nom du mot a remplacer dans tout le fichier 
+
+Usine //W3,L5,A7,E6,...
+
+NomReplaceWith00
+NomReplaceWith01
+NomReplaceWith02
+NomReplaceWith03
+NomReplaceWith04
+NomReplaceWith05
+NomReplaceWith06
+NomReplaceWith07
+NomReplaceWith08
+NomReplaceWith09
+NomReplaceWith10
+NomReplaceWith11
+NomReplaceWith12
+NomReplaceWith13
+NomReplaceWith...
+NomReplaceWith...
+NomReplaceWith...
+
+Ifix Database Title : 
+Ifix Database Title : 
+
+Ifix Type Tag Title 00 :
+Ifix Type Tag Title 00 : 
+Tag Description 00 
+Tag Description 01 
+Tag Description 02 
+Tag Description 03 
+Tag Description 04 
+Tag Description 05 
+Tag Description 06 
+Tag Description 07 
+Tag Description 08 
+Tag Description ... 
+Tag Description ...
+Tag Description ... 
+
+Ifix Type Tag Title 01 :
+Ifix Type Tag Title 01 : 
+Tag Description 00 
+Tag Description 01 
+Tag Description 02 
+Tag Description 03 
+Tag Description 04 
+Tag Description 05 
+Tag Description 06 
+Tag Description 07 
+Tag Description 08 
+Tag Description ... 
+Tag Description ...
+Tag Description ... 
+
+Ifix Type Tag Title 02 :
+Ifix Type Tag Title 02 : 
+Tag Description 00 
+Tag Description 01 
+Tag Description 02 
+Tag Description 03 
+Tag Description 04 
+Tag Description 05 
+Tag Description 06 
+Tag Description 07 
+Tag Description 08 
+Tag Description ... 
+Tag Description ...
+Tag Description ... 
+
+Ifix Type Tag Title ... :
+Ifix Type Tag Title ... : 
+Tag Description 00 
+Tag Description 01 
+Tag Description 02 
+Tag Description 03 
+Tag Description 04 
+Tag Description 05 
+Tag Description 06 
+Tag Description 07 
+Tag Description 08 
+Tag Description ... 
+Tag Description ...
+Tag Description ...
+
+[-------------------------------------------------End of Block List-------------------------------------------------]
+
+
+
