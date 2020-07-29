@@ -19,7 +19,7 @@ bool FichierSortie::ecrireFichierSortie(Usine usine,FichierEntree *fichierIn)
 	{
 		for (int i = 0; i < fichierIn->nbLigneEnteteGlobal; i++)
 		{
-			fichierOut << fichierIn->TD_EnteteGlobal[i]<<std::endl; //afficher l'ente global 
+			fichierOut << fichierIn->TD_EnteteGlobal[i]<<std::endl; //afficher lente global 
 		}
 		fichierOut << std::endl;  ///mettre un entre pour separer 
 	
@@ -45,36 +45,28 @@ bool FichierSortie::ecrireFichierSortie(Usine usine,FichierEntree *fichierIn)
 }
 bool FichierSortie::afficherFichierSortie(Usine usine, FichierEntree *fichierIn)
 {
-	std::ofstream fichierOut("fichier_sotie.txt");
+	
 	std::cout << "\n\n=================================================================================================== " << std::endl;
 	std::cout << "                                        FICHIER DE SORTIE											  " << std::endl;
 	std::cout << "=================================================================================================== " << std::endl;
-	if (fichierOut)
+	for (int i = 0; i < fichierIn->nbLigneEnteteGlobal; i++)
 	{
-		for (int i = 0; i < fichierIn->nbLigneEnteteGlobal; i++)
-		{
-			std::cout << fichierIn->TD_EnteteGlobal[i] << std::endl; //afficher l<ente global 
-		}
-		std::cout << std::endl;  ///mettre un entre pour separer 
-
-		for (int i = 0; i < nbGroupeDeDonnee; i++)
-		{
-			std::cout << TD_groupeDeDonneeGlobal[i].TS_enteteDeDonnee[0] << std::endl;
-			std::cout << TD_groupeDeDonneeGlobal[i].TS_enteteDeDonnee[1] << std::endl;
-
-			for (int y = 0; y < TD_groupeDeDonneeGlobal[i].nbTypeDeLigneDeDonnee; y++)
-			{
-				std::cout << TD_groupeDeDonneeGlobal[i].TD_TypeDeligneDeDonnee[y] << std::endl;
-			}
-			std::cout << std::endl; // faire un espace
-		}
-		std::cout  << "[-------------------------------------------------End of Block List-------------------------------------------------]" << std::endl;
+		std::cout << fichierIn->TD_EnteteGlobal[i] << std::endl; //afficher l<ente global 
 	}
-	else
+	std::cout << std::endl;  ///mettre un entre pour separer 
+
+	for (int i = 0; i < nbGroupeDeDonnee; i++)
 	{
-		std::cout << " Erreur d'ouverture du ficher de SORTE !!!!!!!!!!!!!!!!!!!!!!!!!!" << std::endl;
-	}
+		std::cout << TD_groupeDeDonneeGlobal[i].TS_enteteDeDonnee[0] << std::endl;
+		std::cout << TD_groupeDeDonneeGlobal[i].TS_enteteDeDonnee[1] << std::endl;
 
+		for (int y = 0; y < TD_groupeDeDonneeGlobal[i].nbTypeDeLigneDeDonnee; y++)
+		{
+			std::cout << TD_groupeDeDonneeGlobal[i].TD_TypeDeligneDeDonnee[y] << std::endl;
+		}
+		std::cout << std::endl; // faire un espace
+	}
+	std::cout  << "[-------------------------------------------------End of Block List-------------------------------------------------]" << std::endl;
 	return false;
 }
 
