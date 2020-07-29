@@ -23,7 +23,6 @@ int main()
 	FichierSortie MonFichierSortie;
 	Plc MonPlcTest = Plc();
 
-	
 	if (MonFichierEntree.enregistreFichierIn())  // S'il n y a pas d'erreur on continue 
 	{
 		MonFichierEntree.affichierFichierIn();
@@ -40,7 +39,6 @@ int main()
 		MonFichierSortie.afficherFichierSortie(MonUsine, &MonFichierEntree);
 	}
 	system("PAUSE");
-	
 }
 
 

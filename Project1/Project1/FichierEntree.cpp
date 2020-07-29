@@ -54,8 +54,6 @@ bool FichierEntree::affichierFichierIn()
 	{
 		std::cout << i << " : "<< ligneFichierIn[i]<< std::endl;
 	}
-	
-
 	return false;
 }
 
@@ -84,9 +82,6 @@ bool FichierEntree::afficherDonnee()
 		
 	while ( i < nbSection)
 	{
-		
-		
-		
 		for (int z = 0; z < nbtypeDonnee; z++)
 		{
 			std::cout << std::endl;
@@ -96,7 +91,6 @@ bool FichierEntree::afficherDonnee()
 			TD_typeDonnee[z].afficherDonne();
 			i++;
 		}
-		
 		//manque les type apres test
 	}
 	return false;

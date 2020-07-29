@@ -20,7 +20,18 @@ public:
 	**/
 	bool enregistreFichierIn();
 
+	/**
+	*	affichierFichierIn
+	*
+	*	Permet d'afficher le fichier d'entree dans la console
+	**/
 	bool affichierFichierIn();
+
+	/**
+	*	afficherDonnee
+	*
+	*	Permet d'afficher les section de donner dans la console 
+	**/
 	bool afficherDonnee();
 
 	/**
@@ -29,7 +40,11 @@ public:
 	*	Separe en section selon une structure predefinie pour determiner quoi faire avec chaque section 
 	**/
 	bool separationSectionFichierIn();
+
+
 	bool genereTypeDeDonne();
+
+
 	bool afficherSeparationTypeDonne();
 
 

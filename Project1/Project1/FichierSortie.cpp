@@ -15,15 +15,11 @@ FichierSortie::~FichierSortie()
 bool FichierSortie::ecrireFichierSortie(Usine usine,FichierEntree *fichierIn)
 {
 	std::ofstream fichierOut("fichier_sotie.txt");
-	std::cout << "\n\n=================================================================================================== " << std::endl;
-	std::cout << "                                        FICHIER DE SORTIE											  " << std::endl;
-	std::cout << "=================================================================================================== " << std::endl;
-
 	if (fichierOut)
 	{
 		for (int i = 0; i < fichierIn->nbLigneEnteteGlobal; i++)
 		{
-			fichierOut << fichierIn->TD_EnteteGlobal[i]<<std::endl; //afficher l<ente global 
+			fichierOut << fichierIn->TD_EnteteGlobal[i]<<std::endl; //afficher l'ente global 
 		}
 		fichierOut << std::endl;  ///mettre un entre pour separer 
 	
@@ -50,7 +46,9 @@ bool FichierSortie::ecrireFichierSortie(Usine usine,FichierEntree *fichierIn)
 bool FichierSortie::afficherFichierSortie(Usine usine, FichierEntree *fichierIn)
 {
 	std::ofstream fichierOut("fichier_sotie.txt");
-
+	std::cout << "\n\n=================================================================================================== " << std::endl;
+	std::cout << "                                        FICHIER DE SORTIE											  " << std::endl;
+	std::cout << "=================================================================================================== " << std::endl;
 	if (fichierOut)
 	{
 		for (int i = 0; i < fichierIn->nbLigneEnteteGlobal; i++)
