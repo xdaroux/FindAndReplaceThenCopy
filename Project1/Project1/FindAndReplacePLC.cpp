@@ -26,17 +26,20 @@ int main()
 	if (MonFichierEntree.enregistreFichierIn())  // S'il n y a pas d'erreur on continue 
 	{
 		MonFichierEntree.affichierFichierIn();
-		MonFichierEntree.separationSectionFichierIn();
-		
-		MonFichierEntree.genereTypeDeDonne();
-		
 
-		MonUsine.ajouterLesPlc(MonFichierEntree.nomUsine, MonFichierEntree.TD_nomPlc, MonFichierEntree.nbPlc, MonFichierEntree.TD_typeDonnee, MonFichierEntree.nbtypeDonnee);
-		MonUsine.Usine_FindAndReplacePlcName(MonFichierEntree.nomToReplace);
+		if (MonFichierEntree.separationSectionFichierIn()) // S'il n y a pas d'erreur on continue 
+		{
 
-		MonFichierSortie.ajouterLesDonnerPLC(MonUsine);
-		MonFichierSortie.ecrireFichierSortie(MonUsine, &MonFichierEntree);
-		MonFichierSortie.afficherFichierSortie(MonUsine, &MonFichierEntree);
+			MonFichierEntree.genereTypeDeDonne();
+
+
+			MonUsine.ajouterLesPlc(MonFichierEntree.nomUsine, MonFichierEntree.TD_nomPlc, MonFichierEntree.nbPlc, MonFichierEntree.TD_typeDonnee, MonFichierEntree.nbtypeDonnee);
+			MonUsine.Usine_FindAndReplacePlcName(MonFichierEntree.nomToReplace);
+
+			MonFichierSortie.ajouterLesDonnerPLC(MonUsine);
+			MonFichierSortie.ecrireFichierSortie(MonUsine, &MonFichierEntree);
+			MonFichierSortie.afficherFichierSortie(MonUsine, &MonFichierEntree);
+		}
 	}
 	system("PAUSE");
 }

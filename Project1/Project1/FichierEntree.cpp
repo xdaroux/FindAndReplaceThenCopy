@@ -101,12 +101,16 @@ bool FichierEntree::separationSectionFichierIn()
 
 	int i = 0;
 	int y = 0;
+
+	int flag_err = 1;
+	bool err = true;
+
 	nbSection = 0;
 	
 	while (i < nbLigneFichierIn-1) // car si nn on depasse ... 
 	{
-		while (ligneFichierIn[i][0] != '\0' && i < nbLigneFichierIn)
-		{
+		while (ligneFichierIn[i][0] != '\0' && i < nbLigneFichierIn) //Quand on rencontre un '\0' = nouvelle section 
+		{ 
 			if (nbSection > SECTION_IFIX_AND_MORE) // des que j'ai depasser les 3 premiere secion 0,1,2 ben on est rendu dans les donne so a chaque fois faut cree un nouveau type de donnee
 			{
 				TD_typeDonnee.push_back(TypeDeDonnee()); // je cree un type de donnee
@@ -117,7 +121,6 @@ bool FichierEntree::separationSectionFichierIn()
 			{
 				nomToReplace = ligneFichierIn[i];
 				//std::cout << "Longueur du Mots a remplacer !!! : " <<nomToReplace.length << std::endl;
-
 			}
 			else if (nbSection == SECTION_NAME_USINE) // usine
 			{
@@ -141,17 +144,29 @@ bool FichierEntree::separationSectionFichierIn()
 
 			}
 			i++;//pour avancer de ligne
+			flag_err = 0; //etre certain qu'on passe ici entre les sections pour detecter un double '\0'
 
 		}
 		if (nbSection > SECTION_IFIX_AND_MORE)
 		{
 			nbtypeDonnee++; // ajouter un type car la on a fini d'ajouter tout les types de donee dans le precedans
 		}
+		// Detection des erreurs dans la contruction du fichier 
+		if (flag_err > 0 )
+		{
+			std::cout << "ERREUR dans la contruction du fichier  : ligne " << i << std::endl;
+			err = false; 
+		}
+		flag_err++;
+
 		nbSection++;//quand on change de section on a donc rencontre '\0'
 		i++; //Pour avancer de ligne car '\0' SKIP L'AUTRE SECTION
+
+
+		/// Je peut faire quelque chose quand on passe deux fois de suite back a back ici comme si on rencontre 2 ligne ou meme 3 avec des '\0'
 	}
 
-	return false;
+	return err;
 }
 
 bool FichierEntree::genereTypeDeDonne()
