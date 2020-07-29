@@ -14,6 +14,7 @@
 #include "FindAndReplacePLC.h"
 #include "plc.h"
 
+#define DEBUG 1
 using namespace std;
 
 int main()
@@ -29,7 +30,6 @@ int main()
 
 		if (MonFichierEntree.separationSectionFichierIn()) // S'il n y a pas d'erreur on continue 
 		{
-
 			MonFichierEntree.genereTypeDeDonne();
 
 
@@ -39,9 +39,30 @@ int main()
 			MonFichierSortie.ajouterLesDonnerPLC(MonUsine);
 			MonFichierSortie.ecrireFichierSortie(MonUsine, &MonFichierEntree);
 			MonFichierSortie.afficherFichierSortie(MonUsine, &MonFichierEntree);
+
+			std::cout << "\n\n ===================================================================================================" << std::endl;
+			std::cout << "                                            SUCCESS"												<< std::endl;
+			std::cout << " ===================================================================================================" << std::endl;
+		}
+		else
+		{
+			std::cout << "\n\n ===================================================================================================" << std::endl;
+			std::cout << "                                            FAIL" << std::endl;
+			std::cout << " ===================================================================================================" << std::endl;
+			std::cout << "Erreur dans l'indentation du fuchier d'entree !!!!" << std::endl;
+			system("PAUSE");
+			
 		}
 	}
-	system("PAUSE");
+	else 
+	{
+		std::cout << "\n\n ===================================================================================================" << std::endl;
+		std::cout << "                                            FAIL" << std::endl;
+		std::cout << " ===================================================================================================" << std::endl;
+		std::cout << "Erreur Ouverture du fichier" << std::endl;
+		system("PAUSE");
+	}
+	return EXIT_SUCCESS;
 }
 
 

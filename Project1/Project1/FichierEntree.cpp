@@ -6,7 +6,7 @@
 #define SECTION_NAME_PLC 2
 #define SECTION_IFIX_AND_MORE 3
 
-
+#define DEBUG 1
 
 FichierEntree::FichierEntree()
 {
@@ -152,14 +152,16 @@ bool FichierEntree::separationSectionFichierIn()
 			nbtypeDonnee++; // ajouter un type car la on a fini d'ajouter tout les types de donee dans le precedans
 		}
 		// Detection des erreurs dans la contruction du fichier 
-		if (flag_err > 0 )
+		if (flag_err > 0 ) // 2 espace consecutif = ERREUR 
 		{
-			std::cout << "ERREUR dans la contruction du fichier  : ligne " << i << std::endl;
+			std::cout << "\nERREUR dans la contruction du fichier  : ligne " << i << std::endl;
 			err = false; 
 		}
+		else // S il y a un seul espace on augmente la section
+		{
+			nbSection++;//quand on change de section on a donc rencontre '\0'
+		}
 		flag_err++;
-
-		nbSection++;//quand on change de section on a donc rencontre '\0'
 		i++; //Pour avancer de ligne car '\0' SKIP L'AUTRE SECTION
 
 
