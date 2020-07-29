@@ -15,7 +15,9 @@ FichierSortie::~FichierSortie()
 bool FichierSortie::ecrireFichierSortie(Usine usine,FichierEntree *fichierIn)
 {
 	std::ofstream fichierOut("fichier_sotie.txt");
-	
+	std::cout << "\n\n=================================================================================================== " << std::endl;
+	std::cout << "                                        FICHIER DE SORTIE											  " << std::endl;
+	std::cout << "=================================================================================================== " << std::endl;
 
 	if (fichierOut)
 	{

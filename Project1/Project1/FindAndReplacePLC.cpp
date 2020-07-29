@@ -24,8 +24,8 @@ int main()
 	Plc MonPlcTest = Plc();
 
 	
-	MonFichierEntree.enregistreFichierIn();  // Si il ny a pas derreru continue 
-	
+	if (MonFichierEntree.enregistreFichierIn())  // Si il ny a pas derreru continue 
+	{
 		MonFichierEntree.affichierFichierIn();
 		MonFichierEntree.separationSectionFichierIn();
 		//MonFichierEntree.afficherDonnee();
@@ -37,8 +37,11 @@ int main()
 
 		MonFichierSortie.ajouterLesDonnerPLC(MonUsine);
 		MonFichierSortie.ecrireFichierSortie(MonUsine, &MonFichierEntree);
-
-		//MonFichierSortie.afficherFichierSortie(MonUsine, &MonFichierEntree);
+		MonFichierSortie.afficherFichierSortie(MonUsine, &MonFichierEntree);
+	}
+	system("PAUSE");
+	
+		//
 		//MonPlcTest.enregistrerPlcGroupeDeDonnee(MonFichierEntree.sortirToutLesTypeDeDonnee()); // plc test
 
 		//cout << "Ici j'affiche mon AI dans mon plc Test " << endl;

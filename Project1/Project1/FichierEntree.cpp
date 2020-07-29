@@ -19,7 +19,7 @@ FichierEntree::~FichierEntree()
 
 bool FichierEntree::enregistreFichierIn()
 {
-	bool err = true;
+	bool good = true;
 	fichierIn.open("fichier_entree.txt", std::ifstream::in);
 	if (fichierIn)
 	{
@@ -38,15 +38,18 @@ bool FichierEntree::enregistreFichierIn()
 	else
 	{
 		std::cout << "ERREUR d'ouverture du fichier" << std::endl;
-		err = false;
+		good = false;
 	}
 	fichierIn.close();
-	return err;
+	return good;
 }
 
 bool FichierEntree::affichierFichierIn()
 {
 	int i;
+	std::cout << "=================================================================================================== " << std::endl;
+	std::cout << "                                        FICHIER D'ENTREE											  " << std::endl;
+	std::cout << "=================================================================================================== " << std::endl;
 	for (i = 0; i < nbLigneFichierIn; i++)
 	{
 		std::cout << i << " : "<< ligneFichierIn[i]<< std::endl;
