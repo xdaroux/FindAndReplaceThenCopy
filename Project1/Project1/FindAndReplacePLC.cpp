@@ -59,7 +59,9 @@ int main()
 		std::cout << "\n\n ===================================================================================================" << std::endl;
 		std::cout << "                                            FAIL" << std::endl;
 		std::cout << " ===================================================================================================" << std::endl;
-		std::cout << "Erreur Ouverture du fichier" << std::endl;
+		std::cout << "Erreur Ouverture du fichier, FICHIER \"fichier_entree.txt\" Introuvable\n" << std::endl;
+		std::cout << "Assurez-vous que votre fichier d'entree est dans le meme repetoire que l'executable et qu'il est nommer : \"fichier_entree.txt\"\n\n" << std::endl;
+
 		system("PAUSE");
 	}
 	return EXIT_SUCCESS;
